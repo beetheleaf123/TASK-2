@@ -1,0 +1,16 @@
+The "mat.in" file is created by using the following
+def generate_matrix(rows, columns):
+
+    return ''.join(random.choice('01') for _ in range(rows * columns))
+# Chosing random 0s and 1s after the :
+
+def create_mat_in_file(filename):
+
+    num_matrices = random.randint(100000, 100005) # Num of lines
+
+    with open(filename, 'w') as file: # writing in the file 
+        for _ in range(num_matrices):
+            rows = random.randint(5, 10)
+            columns = random.randint(5, 10)
+            matrix_data = generate_matrix(rows, columns)
+            file.write(f'{rows}x{columns}:{matrix_data}\n') 
